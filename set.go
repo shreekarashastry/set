@@ -49,10 +49,7 @@ var keyExists = struct{}{}
 // New creates and initalizes a new Set interface. Its single parameter
 // denotes the type of set to create. Either ThreadSafe or
 // NonThreadSafe. The default is ThreadSafe.
-func New(settype SetType) Interface {
-	if settype == NonThreadSafe {
-		return newNonTS()
-	}
+func New() Interface {
 	return newTS()
 }
 

@@ -7,7 +7,7 @@ import (
 )
 
 func Test_New(t *testing.T) {
-	s := New(ThreadSafe)
+	s := New()
 	s.Add(1, 2, 3, "testing")
 	if s.Size() != 4 {
 		t.Error("New: The set created was expected have 4 items")
@@ -15,7 +15,7 @@ func Test_New(t *testing.T) {
 }
 
 func TestSetNonTS_Add(t *testing.T) {
-	s := New(NonThreadSafe)
+	s := New()
 	s.Add(1)
 	s.Add(2)
 	s.Add(2) // duplicate
